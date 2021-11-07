@@ -3,6 +3,7 @@
   import { monsters } from "./monsters";
   import { Act, Trait, Expansion, Monster, Tier } from "./models";
   import { traitTooltip, valueForTier } from "./utils";
+  import Header from "./Header.svelte";
 
   let loading = false;
   let loadingCancel;
@@ -89,6 +90,7 @@
 </script>
 
 <main>
+  <Header />
   {#if activeTraits && activeExpansions && filteredMonsters}
     <header class="bg-white shadow">
       <div class="py-6 px-4 sm:px-6 lg:px-8">
@@ -97,7 +99,6 @@
         </h1>
       </div>
     </header>
-    <main>
       <div class="mx-4 py-6 sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow rounded-lg">
           <div class="px-4 py-5 sm:p-6">
@@ -186,6 +187,5 @@
           {/each}
         </ul>
       </div>
-    </main>
   {/if}
 </main>
